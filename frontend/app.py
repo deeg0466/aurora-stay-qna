@@ -1,4 +1,6 @@
 
+import os
+
 import streamlit as st
 import requests
 
@@ -7,7 +9,9 @@ import requests
 # Configuration
 # ---------------------------------------------------------
 
-BACKEND_URL = "http://localhost:7860"
+# Configurable via env var so the containerized frontend can
+# reach the backend by its container/service name
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:7860")
 
 
 # ---------------------------------------------------------
